@@ -7,25 +7,25 @@ def main():
     if len(sys.argv)==2:
         validate(sys.argv[1])
     else: #missing or too many arguments in command line
-        output("Please enter one and only one password for validation  ",False)
+        output("Please enter one password for validation  ",False)
 
 def validate(password):
     """
     validating password and assuring its standards
     :param password: the password to be validated
     """
-    if len(password)>=10: #checking length
+    if len(password)>=10: #verifying length
         has_num=False
         has_upper=False
         has_lower=False
         for c in sys.argv[1]:
-            if c.isnumeric(): #checking it contains at least one digit
+            if c.isnumeric():  #verifying it contains at least one digit
                 has_num=True
-            if c.islower():#checking it contains at least one lower case char
+            if c.islower():     # verifying it contains at least one lower case char
                 has_lower=True
-            if c.isupper():#checking it contains at least one upper case char
+            if c.isupper():      #verifying it contains at least one upper case char
                 has_upper=True
-            if has_lower and has_num and has_upper: #All ok, no need to check the rest
+            if has_lower and has_num and has_upper:    #All ok, no need to check the rest
                  output("your password meets all requirements  ",True)
         if not has_num:
             output("password must contain a digit",False)
@@ -33,7 +33,6 @@ def validate(password):
             output("password must contain upper case letter",False)
         if not has_lower:
             output("password must contain lower case letter",False)
-
 
     else:
         output("password length must be at least 10 characters",False)
