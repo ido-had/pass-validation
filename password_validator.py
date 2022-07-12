@@ -3,7 +3,6 @@ from colorama import Fore
 
 
 def main():
-
     if len(sys.argv)==2:
         validate(sys.argv[1])
     else: #missing or too many arguments in command line
