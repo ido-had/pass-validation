@@ -12,7 +12,6 @@ for k,v in dic.items():
     reversed_dic[v]=temp_list #placing the updated list for the matched key
 
 
-
 print(reversed_dic.items())
 
 

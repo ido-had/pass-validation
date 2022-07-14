@@ -14,6 +14,7 @@ def check_list (lists):
     return has_duplicates
 
 
+
 lst1=[1,2,3,4]
 lst2=[6,7,8,4]
 lst3=[1,2,3,4]
