@@ -3,10 +3,24 @@ from colorama import Fore
 
 
 def main():
+    print(len(sys.argv))
     if len(sys.argv)==2:
         validate(sys.argv[1])
+    elif len(sys.argv)==3:
+        fileHandling()
     else: #missing or too many arguments in command line
-        output("Please enter one password for validation  ",False)
+        output("Please enter one password for validation or use -f filename to validate password from a file ",False)
+
+def fileHandling():
+    """
+    reading password from a file and sending it for validation
+    """
+    if sys.argv[1]!='-f':
+        output("wrong command parameter. for fetching password from file please use -f filepath\\filename",False)
+    else:
+        f=open(sys.argv[2],"r")
+        text=f.readline()
+        validate(text)
 
 def validate(password):
     """
@@ -17,7 +31,7 @@ def validate(password):
         has_num=False
         has_upper=False
         has_lower=False
-        for c in sys.argv[1]:
+        for c in password:
             if c.isnumeric():  #verifying it contains at least one digit
                 has_num=True
             if c.islower():     # verifying it contains at least one lower case char
