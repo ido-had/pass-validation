@@ -39,7 +39,7 @@ def validate(password):
             if c.isupper():      #verifying it contains at least one upper case char
                 has_upper=True
             if has_lower and has_num and has_upper:    #All ok, no need to check the rest
-                 output("Password meets all requirements  ",True)
+                 output("the Password meets all requirements  ",True)
         if not has_num:
             output("password must contain a digit",False)
         if not has_upper:
